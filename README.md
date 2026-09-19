@@ -62,10 +62,28 @@ crossover). Median split long/short, 7-day forward returns.
 directionally consistent with in-sample (+274 bp/wk), though magnitude
 decayed. All other signals are tail-carried.
 
-### Phase 2: Integration
+### Phase 2: Integration (DONE, negative result)
 
-If BTC NVT survives further scrutiny (cost screen, different lookbacks),
-test blending with momentum or carry signals from sibling repos.
+Tested BTC NVT as a timing overlay: go long BTC when NVT is below its
+rolling 180-day median, flat otherwise.
+
+| Period     | Buy-and-hold | NVT-timed | Timing value (bp/day) |
+|------------|--------------|-----------|----------------------|
+| In-sample  | +14861%      | -63%      | -24.1                |
+| OOS        | +33%         | -2%       | -4.9                 |
+
+**Verdict: KILL.** NVT timing destroys value. The Phase 1 median-split
+spread was real but economically useless: sitting out when NVT is high
+means missing BTC's strongest rallies. The opportunity cost overwhelms
+any signal. Timing value is negative in both samples and fails every
+honesty check (0/9 and 0/3 positive years).
+
+## Final verdict
+
+No tradeable signal survives. Three of five signals are tail-carried in
+Phase 1. The one survivor (BTC NVT) fails as a timing overlay in Phase 2.
+This confirms the README's original assessment: on-chain metrics are the
+lowest priority idea for good reason.
 
 ## Honesty method
 
